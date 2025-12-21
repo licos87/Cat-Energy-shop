@@ -1,4 +1,4 @@
-name: Lint and Build
+name: CI/CD piplines
 
 on:
   push:
@@ -12,6 +12,7 @@ on:
 
 jobs:
   lint:
+    name: Run Linter
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -26,6 +27,7 @@ jobs:
         run: npm run lint
 
   build:
+    name: Build Project
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
