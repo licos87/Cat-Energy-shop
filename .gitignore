@@ -3,6 +3,7 @@
 # dependencies
 /node_modules
 /.pnp
+.pnp.js
 .pnp.*
 .yarn/*
 !.yarn/patches
@@ -19,18 +20,40 @@
 
 # production
 /build
+/storybook-static
 
 # misc
 .DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.vscode
+.idea
+.Zone.Identifier
 *.pem
 
 # debug
 npm-debug.log*
+.pnpm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-.pnpm-debug.log*
+/playwright-report
+/test-results
+stats.html
+.vite-inspect
+/.cursor
 
-# env files (can opt-in for committing if needed)
+# Playwright
+/test-results/
+/playwright-report/
+/playwright/.cache/
+projectStructure.cache.json
+
+*storybook.log
+
+
+# env files
 .env*
 
 # vercel
