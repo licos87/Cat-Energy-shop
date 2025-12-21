@@ -1,4 +1,4 @@
-name: Pipeline
+name: CI/CD
 
 on:
   push:
@@ -12,7 +12,7 @@ on:
 
 jobs:
   lint:
-    name: Run Linter
+    name: lint-check
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -26,8 +26,38 @@ jobs:
       - name: Run linter
         run: npm run lint
 
+  type-check:
+    name: ts-check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20.9'
+          cache: 'npm'
+      - name: Install dependencies
+        run: npm ci
+      - name: Type Check
+        run: npm run type-check
+
+  test:
+    name: test-check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20.9'
+          cache: 'npm'
+      - name: Install dependencies
+        run: npm ci
+      - name: Run Tests
+        run: npm run test
+
   build:
-    name: Build Project
+    name: build-check
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
