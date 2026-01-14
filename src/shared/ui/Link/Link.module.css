@@ -1,0 +1,34 @@
+.link {
+	text-decoration: underline;
+	color: var(--font-color);
+	font-weight: 400;
+	transition: color var(--trans-default);
+
+	&_withIcon {
+		text-decoration: none;
+		display: flex;
+		gap: 8px;
+	}
+	&:hover,
+	&:focus {
+		color: var(--color-active);
+	}
+	&:active {
+		color: var(--color-active);
+	}
+}
+
+.link-size {
+	&_xs {
+		font-size: var(--fz-xs);
+		line-height: var(--fz-xs);
+	}
+	&_m {
+		font-size: var(--fz-m);
+		line-height: var(--fz-m);
+	}
+}
+
+.nowrap {
+	white-space: nowrap;
+}
