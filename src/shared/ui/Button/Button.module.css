@@ -6,14 +6,17 @@
 	box-sizing: border-box;
 	padding: 0;
 	border: none;
+	cursor: pointer;
+	transition: opacity var(--trans-default);
+	font-family: var(--ff-title);
 
 	&:hover {
-		border: none;
+		opacity: var(--hover);
 	}
 
 	&:focus,
 	&:focus-visible {
-		outline: none;
+		opacity: var(--active);
 	}
 }
 

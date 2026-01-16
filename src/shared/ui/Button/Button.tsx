@@ -2,15 +2,10 @@
 
 import { ButtonHTMLAttributes, memo } from 'react';
 
-
-
 import classnames from 'classnames';
 import Link from 'next/link';
 
-
-
 import styles from './Button.module.css';
-
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 	readonly size?: 's' | 'm' | 'l';

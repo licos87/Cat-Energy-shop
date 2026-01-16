@@ -33,7 +33,7 @@ function NavMenu() {
 				className={styles.burgerBtn}
 				onClick={openToggle}
 			>
-				<span className="visually-hidden">Открыть меню</span>
+				<span className="visually-hidden">Главное меню</span>
 				<span className={styles.burger_btn_span}></span>
 			</Button>
 			<ul className={styles.navList}>

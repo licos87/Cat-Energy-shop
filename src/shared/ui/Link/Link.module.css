@@ -11,10 +11,10 @@
 	}
 	&:hover,
 	&:focus {
-		color: var(--color-active);
+		color: var(--color-accent);
 	}
 	&:active {
-		color: var(--color-active);
+		color: var(--color-accent);
 	}
 }
 

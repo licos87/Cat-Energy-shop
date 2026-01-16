@@ -1,89 +1,98 @@
-@use "sass:map";
-@use '../../styles/fonts.scss';
-@use '../../styles/colors.scss';
-
 .text {
-	&_h1 {
-		font-size: map.get(fonts.$font-size, XL);
-		line-height: map.get(fonts.$line-height, XL);
+	&.h1 {
+		font-size: var(--fz-xxxl);
+		line-height: var(--fz-xxxl);
+		font-family: var(--ff-title);
 	}
 
-	&_h2 {
-		font-size: map.get(fonts.$font-size, L);
-		line-height: map.get(fonts.$line-height, L);
+	&.h2 {
+		font-size: var(--fz-xxl);
+		line-height: var(--fz-xxl);
+		font-family: var(--ff-title);
 	}
 
-	&_h3 {
-		font-size: map.get(fonts.$font-size, M);
-		line-height: map.get(fonts.$line-height, M);
+	&.h3 {
+		font-size: var(--fz-xl);
+		line-height: var(--fz-xl);
+		font-family: var(--ff-title);
 	}
 
-	&_h4 {
-		font-size: map.get(fonts.$font-size, S);
-		line-height: map.get(fonts.$line-height, S);
+	&.h4 {
+		font-size: var(--fz-l);
+		line-height: var(--fz-l);
+		font-family: var(--ff-title);
 	}
 
-	&_h5 {
-		font-size: map.get(fonts.$font-size, XS);
-		line-height: map.get(fonts.$line-height, XS);
+	&.h5 {
+		font-size: var(--fz-m);
+		line-height: var(--fz-m);
+		font-family: var(--ff-title);
 	}
 
-	&_bold {
-		font-weight: map.get(fonts.$font-weight, B);
+	&.xxs {
+		font-size: var(--fz-xxs);
+		line-height: var(--fz-xxs);
 	}
 
-  &_semi-bold {
-		font-weight: map.get(fonts.$font-weight, SB);
+	&.xs {
+		font-size: var(--fz-xs);
+		line-height: var(--fz-xs);
 	}
 
-	&_medium {
-		font-weight: map.get(fonts.$font-weight, M);
+	&.s {
+		font-size: var(--fz-s);
+		line-height: var(--fz-s);
 	}
 
-	&_regular {
-		font-weight: map.get(fonts.$font-weight, R);
+	&.m {
+		font-size: var(--fz-m);
+		line-height: var(--fz-m);
 	}
 
-	&_light {
-		font-weight: map.get(fonts.$font-weight, L);
+	&.l {
+		font-size: var(--fz-l);
+		line-height: var(--fz-l);
 	}
 
-	&_xs {
-		font-size: map.get(fonts.$font-size, XS);
-		line-height: map.get(fonts.$line-height, XS);
+	&.xl {
+		font-size: var(--fz-xl);
+		line-height: var(--fz-xl);
 	}
 
-	&_s {
-		font-size: map.get(fonts.$font-size, S);
-		line-height: map.get(fonts.$line-height, S);
+	&.xxl {
+		font-size: var(--fz-xxl);
+		line-height: var(--fz-xxl);
 	}
 
-	&_m {
-		font-size: map.get(fonts.$font-size, M);
-		line-height: map.get(fonts.$line-height, M);
+	&.xxxl {
+		font-size: var(--fz-xxxl);
+		line-height: var(--fz-xxxl);
 	}
 
-	&_l {
-		font-size: map.get(fonts.$font-size, L);
-		line-height: map.get(fonts.$line-height, L);
+	&.bold {
+		font-weight: 700;
 	}
 
-	&_xl {
-		font-size: map.get(fonts.$font-size, XL);
-		line-height: map.get(fonts.$line-height, XL);
+	&.semi-bold {
+		font-weight: 600;
 	}
 
-	&_primary {
-		color: colors.$text_primary;
+	&.medium {
+		font-weight: 500;
 	}
 
-	&_secondary {
-		color: colors.$text_secondary;
+	&&.regular {
+		font-weight: 400;
 	}
-	&_alert {
-		color: colors.$text_alert;
+
+	&.light {
+		font-weight: 300;
 	}
-	&_action {
-		color: colors.$text_action;
+
+	&.alert {
+		color: var(--color-alert);
+	}
+	&.action {
+		color: var(--color-accent);
 	}
 }
