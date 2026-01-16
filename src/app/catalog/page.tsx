@@ -1,15 +1,16 @@
-import React from 'react';
 import type { Metadata } from 'next';
 
+import React from 'react';
+
+import { CatalogPage } from '@/pages_';
+
 export const metadata: Metadata = {
-	title: "Каталог товаров",
-	description: "Каталог наших товаров",
+	title: 'Каталог товаров',
+	description: 'Каталог наших товаров',
 };
 
 function Catalog() {
-	return (
-		<div>Catalog</div>
-	);
+	return <CatalogPage />;
 }
 
 export default Catalog;

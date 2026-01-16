@@ -1,15 +1,16 @@
-import React from 'react';
 import type { Metadata } from 'next';
 
+import React from 'react';
+
+import { FormPage } from '@/pages_';
+
 export const metadata: Metadata = {
-	title: "Подбор программы",
-	description: "Анкета для подбора программы",
+	title: 'Подбор программы',
+	description: 'Анкета для подбора программы',
 };
 
 function Form() {
-	return (
-		<div>Form</div>
-	);
+	return <FormPage />;
 }
 
 export default Form;

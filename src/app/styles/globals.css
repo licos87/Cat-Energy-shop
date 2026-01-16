@@ -6,7 +6,7 @@
   --separator: #E6E6E6;
   --color-disabled: rgba(0, 0, 0, 0.1);
   --color-accent: #68B738;
-  --color-active: #68B738;
+  --color-alert: #ff8282;
 
 /*Typography*/
   --font-lato: "Lato", sans-serif;
@@ -20,8 +20,8 @@
   --fz-s: 18px;
   --fz-m: 20px;
   --fz-l: 24px;
-  --fz-xl: 36px;
-  --fz-xxl: 30px;
+  --fz-xl: 30px;
+  --fz-xxl: 36px;
   --fz-xxxl: 60px;
 
 /*Animation*/

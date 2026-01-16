@@ -8,12 +8,6 @@
   background-color: var(--bg-color);
 }
 
-@media (max-width: 600px) {
-  .main {
-    padding: 48px 24px;
-  }
-}
-
 @media (prefers-color-scheme: dark) {
   .logo {
     filter: invert();
