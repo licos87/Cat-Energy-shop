@@ -10,9 +10,9 @@
   left: 0;
   width: 100vw;
   list-style-type: none;
-  z-index: 20;
+  z-index: 50;
   pointer-events: none;
-  background-color: var(--bg-color);
+  background-color: transparent;
 
   @media (width >= 768px) {
     position: static;
@@ -31,7 +31,7 @@
   line-height: 0;
   opacity: 0;
   transition: 0.4s ease-out;
-  border-bottom: 1px solid var(--separator);
+  border-bottom: 1px solid var(--color-separator);
   font-family: var(--ff-title);
 
   @media (width >= 768px) {
@@ -43,7 +43,7 @@
   }
 
   &:first-child {
-    border-top: 1px solid var(--separator);
+    border-top: 1px solid var(--color-separator);
 
     @media (min-width: 768px) {
       border-top: 2px solid transparent;
@@ -60,6 +60,10 @@
   &:hover {
     opacity: 0.9;
   }
+
+  @media (width >= 1440px) {
+    color: #ffffff;
+  }
 }
 
 .burgerBtn {
@@ -68,7 +72,7 @@
   width: 24px;
   height: 24px;
   border: none;
-  background-color: var(--bg-color);
+  background-color: var(--color-bg);
   z-index: 11;
   cursor: pointer;
 
@@ -78,7 +82,7 @@
   }
 
   &:hover {
-    outline: 1px solid var(--accent);
+    outline: 1px solid var(--color-accent);
     outline-offset: 3px;
     border-radius: 2px;
   }
@@ -101,7 +105,7 @@
     left: 0;
     width: 26px;
     height: 2px;
-    background-color: var(--font-color);
+    background-color: var(--color-font);
     transition: transform 0.4s linear, width 0.4s linear, opacity 0.4s linear;
   }
 }
@@ -116,7 +120,7 @@
     top: 4px;
     width: 26px;
     height: 2px;
-    background-color: var(--font-color);
+    background-color: var(--color-font);
     transition: transform 0.4s linear, width 0.4s linear;
   }
 
@@ -127,7 +131,7 @@
     left: 0;
     width: 26px;
     height: 2px;
-    background-color: var(--font-color);
+    background-color: var(--color-font);
     transition: transform 0.4s linear, width 0.4s linear;
   }
 }
@@ -159,20 +163,24 @@
       transform: rotate(135deg) translate(7px, -5px);
       width: 30px;
       transition: transform var(--trans-default), width var(--trans-default);
-      background-color: var(--font-color);
+      background-color: var(--color-font);
     }
 
     &::after {
       transform: rotate(-135deg) translate(7px, 4px);
       width: 30px;
       transition: transform var(--trans-default), width var(--trans-default);
-      background-color: var(--font-color);
+      background-color: var(--color-font);
     }
   }
 }
 
 .active {
   @media (width >= 768px) {
-    border-bottom: 2px solid var(--accent);
+    border-bottom: 2px solid var(--color-accent);
+  }
+
+  @media (width >= 1440px) {
+    border-bottom: 2px solid #ffffff;
   }
 }

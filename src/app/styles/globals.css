@@ -1,9 +1,9 @@
 :root {
 
 /*Colors*/
-  --bg-color: #ffffff;
-  --font-color: #000000;
-  --separator: #E6E6E6;
+  --color-bg: #ffffff;
+  --color-font: #000000;
+  --color-separator: #E6E6E6;
   --color-disabled: rgba(0, 0, 0, 0.1);
   --color-accent: #68B738;
   --color-alert: #ff8282;
@@ -40,9 +40,8 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg-color: #0a0a0a;
-    --font-color: #ededed;
-    --accent: #ffffff;
+    --color-bg: #0a0a0a;
+    --color-font: #ededed;
   }
 }
 
@@ -53,8 +52,8 @@ body {
 }
 
 body {
-  color: var(--font-color);
-  background: var(--bg-color);
+  color: var(--color-font);
+  background: var(--color-bg);
   font-family: var(--font-lato), Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

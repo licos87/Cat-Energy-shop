@@ -1,4 +1,5 @@
 .header {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -7,12 +8,13 @@
   gap: 14px;
 
   @media (min-width: 768px) {
-    padding: 24px 30px;
+    padding: 20px 30px;
   }
 
   @media (min-width: 1440px) {
     padding: 55px 110px;
     color: #ffffff;
+    z-index: 50;
   }
 }
 
@@ -78,5 +80,5 @@
 
 .logoTitle {
   object-fit: contain;
-  fill: var(--font-color);
+  fill: var(--color-font);
 }
