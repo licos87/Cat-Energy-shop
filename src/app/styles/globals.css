@@ -30,7 +30,7 @@
   --trans-100: 0.1s var(--tf-default);
 
   --hover: 0.6;
-  --active: 0.3;
+  --press: 0.3;
 
 /*Viewports*/
   --mobile-width: 320px;

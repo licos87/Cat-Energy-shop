@@ -12,7 +12,7 @@
   list-style-type: none;
   z-index: 50;
   pointer-events: none;
-  background-color: transparent;
+  background-color: var(--color-bg);
 
   @media (width >= 768px) {
     position: static;
@@ -22,6 +22,7 @@
     justify-content: end;
     width: 100%;
     z-index: unset;
+    background-color: transparent;
   }
 }
 
@@ -51,14 +52,20 @@
   }
 }
 
-.navLink {
+.navLink.navLink {
   display: block;
   width: 100%;
   text-transform: uppercase;
   text-decoration: none;
+  color: var(--color-font);
 
   &:hover {
-    opacity: 0.9;
+    opacity: var(--press);
+  }
+
+  &:focus,
+  &:focus-visible {
+    opacity: var(--hover);
   }
 
   @media (width >= 1440px) {
@@ -88,7 +95,7 @@
   }
 
   &:focus {
-    outline: 1px solid var(--active);
+    outline: 1px solid var(--press);
     outline-offset: 3px;
     border-radius: 2px;
   }
