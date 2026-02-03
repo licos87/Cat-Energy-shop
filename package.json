@@ -5,15 +5,18 @@
 	"scripts": {
 		"server": "nodemon --exec tsx server/server.ts",
 		"client": "next dev -p 3001",
-		"dev": "concurrently \"npm run server\" \"npm run client\" --prefix \"{name}\"",
+		"dev": "concurrently \"prisma generate --watch\" \"npm run server\" \"npm run client\"",
 		"build": "next build",
 		"start": "next start",
 		"lint": "npx eslint src/",
 		"lint:fix": "npx eslint --fix src/",
 		"tsc": "npx tsc",
-		"test": "jest"
+		"test": "jest",
+		"db:studio": "prisma studio"
 	},
 	"dependencies": {
+		"@prisma/client": "^6.19.2",
+		"bcrypt": "^6.0.0",
 		"classnames": "^2.5.1",
 		"compression": "^1.8.1",
 		"cors": "^2.8.5",
@@ -22,13 +25,15 @@
 		"helmet": "^8.1.0",
 		"next": "16.1.0",
 		"react": "19.2.3",
-		"react-dom": "19.2.3"
+		"react-dom": "19.2.3",
+		"zod": "^4.3.6"
 	},
 	"devDependencies": {
 		"@ianvs/prettier-plugin-sort-imports": "^4.7.0",
 		"@svgr/webpack": "^8.1.0",
 		"@testing-library/jest-dom": "^6.9.1",
 		"@testing-library/react": "^16.3.1",
+		"@types/bcrypt": "^6.0.0",
 		"@types/compression": "^1.8.1",
 		"@types/cors": "^2.8.19",
 		"@types/express": "^5.0.6",
@@ -43,6 +48,7 @@
 		"jest": "^30.2.0",
 		"nodemon": "^3.1.11",
 		"prettier": "^3.7.4",
+		"prisma": "^6.19.2",
 		"ts-jest": "^29.4.6",
 		"tsx": "^4.21.0",
 		"typescript": "^5.9.3"

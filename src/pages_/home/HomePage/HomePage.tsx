@@ -6,6 +6,7 @@ export const HomePage = () => {
 		<div className={styles.page}>
 			<main className={styles.main}>
 				<Hero/>
+
 			</main>
 		</div>
 	);
