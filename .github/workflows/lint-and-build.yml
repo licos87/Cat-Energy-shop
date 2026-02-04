@@ -2,9 +2,13 @@ name: CI/CD
 
 on:
   push:
-    branches: [main, develop]
+    branches:
+      - main
+      - develop
   pull_request:
-    branches: [main, develop]
+    branches:
+      - main
+      - develop
 
 jobs:
   lint:
@@ -12,36 +16,51 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
           node-version: '24'
           cache: 'npm'
-      - run: npm ci
-      - run: npm run lint
+      - name: Install dependencies
+        run: npm ci
+      - name: Generate Prisma Client
+        run: npx prisma generate
+      - name: Run linter
+        run: npm run lint
 
   type-check:
     name: TypeScript
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
           node-version: '24'
           cache: 'npm'
-      - run: npm ci
-      - run: npm run tsc
+      - name: Install dependencies
+        run: npm ci
+      - name: Generate Prisma Client
+        run: npx prisma generate
+      - name: Type Check
+        run: npm run tsc
 
   test:
     name: Tests
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
           node-version: '24'
           cache: 'npm'
-      - run: npm ci
-      - run: npm run test
+      - name: Install dependencies
+        run: npm ci
+      - name: Generate Prisma Client
+        run: npx prisma generate
+      - name: Run Tests
+        run: npm run test
 
   build:
     name: Build
@@ -49,19 +68,14 @@ jobs:
     needs: [lint, type-check]
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
           node-version: '24'
           cache: 'npm'
-      - run: npm ci
-      - run: npm run build
-
-  deploy:
-    name: Deploy
-    runs-on: ubuntu-latest
-    needs: [test, build]  # Только после успешных тестов+сборки
-    if: github.ref == 'refs/heads/main'  # Только на main
-    steps:
-      - uses: actions/checkout@v4
-      - run: echo "Deploy to Vercel/Render"
-      # Добавьте реальный deploy позже
+      - name: Install dependencies
+        run: npm ci
+      - name: Generate Prisma Client
+        run: npx prisma generate
+      - name: Build
+        run: npm run build
