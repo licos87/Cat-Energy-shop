@@ -16,7 +16,7 @@
 
 	&:focus,
 	&:focus-visible {
-		opacity: var(--active);
+		opacity: var(--press);
 	}
 }
 

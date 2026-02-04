@@ -1,11 +1,11 @@
 .page {
   font-family: var(--font-lato), Arial, sans-serif;
-  background-color: var(--bg-color);
+  background-color: var(--color-bg);
 }
 
 .main {
   width: 100%;
-  background-color: var(--bg-color);
+  background-color: var(--color-bg);
 }
 
 @media (prefers-color-scheme: dark) {

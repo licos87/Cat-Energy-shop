@@ -10,6 +10,9 @@ import { Lato, Oswald } from 'next/font/google';
 
 
 import './styles/globals.css';
+
+
+
 import Header from '@widgets/header';
 
 
@@ -31,6 +34,11 @@ const oswaldSans = Oswald({
 export const metadata: Metadata = {
 	title: 'Cat Energy',
 	description: 'Функциональное питание для котов',
+	icons: {
+		icon: ['/favicon/favicon.svg', '/favicon/favicon-96x96.png'],
+		apple: '/favicon/apple-touch-icon.png',
+	},
+	manifest: '/favicon/site.webmanifest',
 };
 
 export default function RootLayout({

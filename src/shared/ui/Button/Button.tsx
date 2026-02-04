@@ -1,76 +1,75 @@
 'use client';
 
-import { ButtonHTMLAttributes, memo } from 'react';
+import { AnchorHTMLAttributes, ComponentProps, memo } from 'react';
 
 import classnames from 'classnames';
-import Link from 'next/link';
+import Link, { LinkProps } from 'next/link';
 
 import styles from './Button.module.css';
 
-interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-	readonly size?: 's' | 'm' | 'l';
-	readonly href?: string;
-	readonly width?: 'auto' | 'max';
-	readonly name?: string;
-}
+type BaseProps = {
+	size?: 's' | 'm' | 'l';
+	width?: 'auto' | 'max';
+	className?: string;
+	children: React.ReactNode;
+	categoryFilter?: number;
+};
 
-export const Button = memo(
-	({
-		children,
-		size = 'm',
-		href = '',
-		disabled = false,
-		type = 'button',
+type ButtonProps = BaseProps &
+	ComponentProps<'button'> & {
+		href?: never;
+	};
+
+type AnchorProps = BaseProps &
+	Omit<LinkProps, 'href'> &
+	Omit<AnchorHTMLAttributes<HTMLAnchorElement>, keyof LinkProps | 'href'> & {
+		href: LinkProps['href'];
+		disabled?: boolean;
+	};
+
+type Props = ButtonProps | AnchorProps;
+
+export const Button = memo((props: Props) => {
+	const { children, size = 'm', className, width = 'auto', ...rest } = props;
+
+	const isDisabled = 'disabled' in rest ? rest.disabled : false;
+
+	const commonClassName = classnames(
+		styles.btn,
+		styles[`btn-size_${size}`],
+		styles[`btn-width_${width}`],
+		{
+			[styles['btn-disabled']]: isDisabled,
+		},
 		className,
-		width = 'auto',
-		onClick,
-		...rest
-	}: ButtonProps) => {
+	);
+
+	if ('href' in rest && rest.href) {
+		const { href, disabled, ...linkProps } = rest as AnchorProps;
 		return (
-			<>
-				{href ? (
-					<Link href={href}>
-						<button
-							className={classnames(
-								styles.btn,
-								styles[`btn-size_${size}`],
-								styles[`btn-width_${width}`],
-								{
-									[styles['btn-disabled']]: disabled,
-								},
-								className,
-							)}
-							disabled={disabled}
-							onClick={onClick}
-							type={type}
-							{...rest}
-						>
-							{children}
-						</button>
-					</Link>
-				) : null}
-				{!href && (
-					<button
-						className={classnames(
-							styles.btn,
-							styles[`btn-size_${size}`],
-							styles[`btn-width_${width}`],
-							{
-								[styles['btn-disabled']]: disabled,
-							},
-							className,
-						)}
-						disabled={disabled}
-						onClick={onClick}
-						type={type}
-						{...rest}
-					>
-						{children}
-					</button>
-				)}
-			</>
+			<Link
+				href={href}
+				className={classnames(commonClassName, {
+					[styles['btn-disabled']]: disabled,
+				})}
+				{...linkProps}
+			>
+				{children}
+			</Link>
 		);
-	},
-);
+	}
+
+	const { type = 'button', ...buttonProps } = rest as ButtonProps;
+
+	return (
+		<button
+			className={commonClassName}
+			type={type}
+			{...buttonProps}
+		>
+			{children}
+		</button>
+	);
+});
 
 Button.displayName = 'Button';

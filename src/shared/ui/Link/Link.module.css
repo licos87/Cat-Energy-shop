@@ -1,6 +1,6 @@
 .link {
 	text-decoration: underline;
-	color: var(--font-color);
+	color: var(--color-font);
 	font-weight: 400;
 	transition: color var(--trans-default);
 

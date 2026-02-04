@@ -2,20 +2,13 @@
 
 import React, { useState } from 'react';
 
-
-
 import classnames from 'classnames';
 import { usePathname } from 'next/dist/client/components/navigation';
-
-
 
 import { RoutePath } from '@shared/constants/routePath';
 import { Button, Link } from '@shared/ui';
 
-
-
 import styles from './NavMenu.module.css';
-
 
 function NavMenu() {
 	const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -24,7 +17,7 @@ function NavMenu() {
 	const openToggle = () => setIsOpen((prev) => !prev);
 
 	return (
-		<div
+		<nav
 			className={classnames(styles.navContainer, {
 				[styles.navContainer_open]: isOpen,
 			})}
@@ -74,7 +67,7 @@ function NavMenu() {
 					</Link>
 				</li>
 			</ul>
-		</div>
+		</nav>
 	);
 }
 

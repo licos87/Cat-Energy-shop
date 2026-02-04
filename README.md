@@ -1,11 +1,27 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Полноценный интернет-магазин кормов для кошек с fullstack стеком Next.js 16 + Express + Prisma + TypeScript.
+🛠 Технологии
+
+Frontend (Next.js 16)
+├── Next.js 16.1.0 (App Router)
+├── React 19.2.3
+├── TypeScript 5.9.3
+├── ESLint + Prettier (кодстайл)
+└── Jest + RTL (тесты)
+
+Backend (Express + Prisma + SQLite)
+├── Express 5.2.1 (REST API)
+├── Prisma 6.19.2 + SQLite (ORM + БД)
+├── bcrypt 6.0.0 (хеширование паролей)
+├── JWT (аутентификация)
+├── Helmet (заголовки безопасности)
+└──  CORS + Compression + RateLimit (middleware)
 
 ## Getting Started
 
 First, run the development server:
 
 ```bash
-npm run dev
+npm run dev # (server:3000 + client:3001)
 # or
 yarn dev
 # or
@@ -14,20 +30,7 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Open [http://localhost:3001](http://localhost:3000) with your browser to see the result.
 
 ## Deploy on Vercel
 

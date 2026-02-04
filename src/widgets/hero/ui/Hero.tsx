@@ -1,49 +1,55 @@
 import React from 'react';
 
-
-
 import { Image } from 'next/dist/client/image-component';
-
-
 
 import { RoutePath } from '@shared/constants/routePath';
 import { Button, Text } from '@shared/ui';
 
-
-
-import PromoImg from '../assets/promo-img-mobile.png';
+import PromoImgMobile from '../assets/promo-img-mobile.png';
+import PromoImg from '../assets/promo-img.png';
 import styles from './Hero.module.css';
-
 
 function Hero() {
 	return (
 		<section className={styles.hero}>
 			<div className={styles.contentWrapper}>
-				<Text
-					tag="h2"
-					className={styles.heroText}
+				<div className={styles.textWrapper}>
+					<Text
+						tag="h2"
+						className={styles.heroText}
+					>
+						Функциональное питание для котов
+					</Text>
+					<Text
+						tag="span"
+						size="xxs"
+						className={styles.heroText}
+					>
+						Занялся собой? Займись котом!
+					</Text>
+				</div>
+				<Button
+					href={RoutePath.FORM}
+					className={styles.heroBtn}
 				>
-					Функциональное питание для котов
-				</Text>
-				<Text
-					tag="h5"
-					size="xxs"
-					className={styles.heroText}
-				>
-					Занялся собой? Займись котом!
-				</Text>
+					Подобрать программу
+				</Button>
 			</div>
-			<Button
-				href={RoutePath.CATALOG}
-				className={styles.heroBtn}
-			>
-				Подобрать программу
-			</Button>
-			<Image
-				src={PromoImg}
-				alt="Cat Energy с курицей"
-				className={styles.promoImg}
-			/>
+			<picture>
+				<source
+					media="(min-width: 768px)"
+					srcSet={PromoImg.src}
+					width={709}
+					height={609}
+				/>
+				<Image
+					src={PromoImgMobile}
+					alt="Cat Energy с курицей"
+					className={styles.promoImg}
+					width={280}
+					height={270}
+				/>
+			</picture>
 		</section>
 	);
 }

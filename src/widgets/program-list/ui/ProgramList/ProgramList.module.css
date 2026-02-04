@@ -1,0 +1,12 @@
+.programsList {
+  padding-inline: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  list-style: none;
+
+  @media (width >= 1440px) {
+    flex-direction: row;
+    gap: 80px;
+  }
+}

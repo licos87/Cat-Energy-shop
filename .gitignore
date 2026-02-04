@@ -55,6 +55,7 @@ projectStructure.cache.json
 
 # env files
 .env*
+/backend/.env.local
 
 # vercel
 .vercel
@@ -62,3 +63,5 @@ projectStructure.cache.json
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+/src/generated/prisma

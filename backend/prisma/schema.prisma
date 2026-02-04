@@ -1,0 +1,46 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+/// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
+model categories {
+  id       Int        @id(map: "category_pkey") @default(autoincrement())
+  name     String     @db.VarChar(50)
+  products products[]
+  programs programs[]
+}
+
+/// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
+model extra_products {
+  id          Int     @id @default(autoincrement())
+  name        String  @db.VarChar(100)
+  price       Decimal @db.Decimal(10, 0)
+  description String? @db.VarChar(500)
+}
+
+/// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
+model products {
+  id          Int         @id @default(autoincrement())
+  name        String      @db.VarChar(100)
+  weight      Int
+  flavor      String      @db.VarChar(100)
+  price       Decimal     @db.Decimal(10, 0)
+  description String?     @db.VarChar(500)
+  image       String?     @db.VarChar(200)
+  category_id Int
+  categories  categories? @relation(fields: [category_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+}
+
+/// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
+model programs {
+  id          Int         @id(map: "program_pkey") @default(autoincrement())
+  name        String      @db.VarChar(100)
+  description String?     @db.VarChar(500)
+  icon        String?     @db.VarChar(200)
+  category_id Int
+  categories  categories? @relation(fields: [category_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "program_category_id_fkey")
+}
