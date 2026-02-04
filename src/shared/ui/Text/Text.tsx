@@ -1,13 +1,8 @@
 import React, { createElement, HTMLAttributes, JSX } from 'react';
 
-
-
 import classnames from 'classnames';
 
-
-
 import styles from './Text.module.css';
-
 
 interface TextProps extends HTMLAttributes<HTMLElement> {
 	tag?: keyof JSX.IntrinsicElements;

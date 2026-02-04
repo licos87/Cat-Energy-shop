@@ -29,7 +29,7 @@ function Header() {
 						/>
 						<Image
 							className={styles.logoImg}
-							src="./logo/logo-mobile.svg"
+							src="/logo/logo-mobile.svg"
 							alt="Logo"
 							width={33}
 							height={38}

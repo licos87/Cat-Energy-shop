@@ -29,7 +29,7 @@ function Hero() {
 					</Text>
 				</div>
 				<Button
-					href={RoutePath.CATALOG}
+					href={RoutePath.FORM}
 					className={styles.heroBtn}
 				>
 					Подобрать программу

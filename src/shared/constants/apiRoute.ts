@@ -1,6 +1,6 @@
 export const enum ApiRoute {
 	MAIN = '/',
 	PROGRAMS = '/programs',
-	CATALOG = '/catalog',
+	CATEGORIES = '/categories',
 	FORM = '/form',
 }

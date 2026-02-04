@@ -1,5 +1,9 @@
 import type { NextConfig } from 'next';
 
+
+
+
+
 const nextConfig: NextConfig = {
 	/* config options here */
 	reactCompiler: true,
@@ -13,13 +17,23 @@ const nextConfig: NextConfig = {
 							icon: true,
 							svgo: true,
 							ref: true,
-							typescript: true, // ← Для TS
+							typescript: true,
 						},
 					},
 				],
 				as: '*.js',
 			},
 		},
+	},
+	images: {
+		remotePatterns: [
+			{
+				protocol: 'https',
+				hostname: 'getfile.dokpub.com',
+			},
+		],
+		dangerouslyAllowSVG: true,
+		contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
 	},
 };
 

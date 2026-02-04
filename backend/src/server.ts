@@ -4,8 +4,9 @@ import express, { Application, Request, Response } from 'express';
 import rateLimit from 'express-rate-limit';
 
 import { AppRoute } from './constants/apiRoutes';
-import programsRouter from './modules/programs/routes/programs';
-import categoriesRouter from './modules/programs/routes/programs';
+import categoriesRouter from './modules/categories';
+import programsRouter from './modules/programs';
+
 
 const app: Application = express();
 const PORT = process.env.SERVER_PORT || 3001;
@@ -23,4 +24,12 @@ app.get(AppRoute.MAIN, (req: Request, res: Response) => {
 app.use(AppRoute.PROGRAMS, programsRouter);
 app.use(AppRoute.CATEGORIES, categoriesRouter);
 
-app.listen(PORT, () => console.log(`🚀 Server: http://localhost:${PORT}`));
+async function startApp() {
+	try {
+		app.listen(PORT, () => console.log(`🚀 Server: http://localhost:${PORT}`));
+	} catch (error) {
+		console.error(error);
+	}
+}
+
+startApp();

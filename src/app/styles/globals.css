@@ -2,6 +2,7 @@
 
 /*Colors*/
   --color-bg: #ffffff;
+  --color-bg-card: #f2f2f2;
   --color-font: #000000;
   --color-separator: #E6E6E6;
   --color-disabled: rgba(0, 0, 0, 0.1);
@@ -25,7 +26,7 @@
   --fz-xxxl: 60px;
 
 /*Animation*/
-  --tf-default: ease-out;
+  --tf-default: ease-in-out;
   --trans-default: 0.3s var(--tf-default);
   --trans-100: 0.1s var(--tf-default);
 
@@ -42,6 +43,7 @@
   :root {
     --color-bg: #0a0a0a;
     --color-font: #ededed;
+    --color-bg-card: rgba(242, 242, 242, 0.5);
   }
 }
 

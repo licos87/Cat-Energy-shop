@@ -1,22 +1,31 @@
 import React from 'react';
 
-import ProgramCard from '@entities/programs';
-import { Program } from '@entities/programs/model/types/program';
+import ProgramCard from '@entities/program';
+import { Program } from '@entities/program/model/types/program';
 import { ApiRoute } from '@shared/constants';
-import { useFetch } from '@shared/hooks';
+import { fetchData } from '@shared/lib';
+import { Text } from '@shared/ui';
 
-function ProgramList() {
-	const {
-		data: programs,
-		loading,
-		error,
-	} = useFetch<Program[]>(ApiRoute.PROGRAMS);
+import styles from './ProgramList.module.css';
 
-	if (loading) return <div>123</div>;
+async function ProgramList() {
+	const { data: programs, error } = await fetchData<Program[]>(
+		ApiRoute.PROGRAMS,
+	);
+
+	if (error) {
+		return (
+			<section className={styles.errorState}>
+				<Text>⚠️ Программы временно недоступны</Text>
+				<Text>Попробуйте обновить страницу</Text>
+			</section>
+		);
+	}
+
 	return (
 		<section>
-			<ul>
-				{(programs || []).map((program) => (
+			<ul className={styles.programsList}>
+				{programs.map((program) => (
 					<li key={program.id}>
 						<ProgramCard program={program} />
 					</li>
