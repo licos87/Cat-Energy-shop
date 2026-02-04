@@ -2,71 +2,66 @@ name: CI/CD
 
 on:
   push:
-    branches:
-      - main
-      - develop
+    branches: [main, develop]
   pull_request:
-    branches:
-      - main
-      - develop
+    branches: [main, develop]
 
 jobs:
   lint:
-    name: lint-check
+    name: Lint
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - uses: actions/setup-node@v4
         with:
-          node-version: '20.9'
+          node-version: '24'
           cache: 'npm'
-      - name: Install dependencies
-        run: npm ci
-      - name: Run linter
-        run: npm run lint
+      - run: npm ci
+      - run: npm run lint
 
   type-check:
-    name: ts-check
+    name: TypeScript
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - uses: actions/setup-node@v4
         with:
-          node-version: '20.9'
+          node-version: '24'
           cache: 'npm'
-      - name: Install dependencies
-        run: npm ci
-      - name: Type Check
-        run: npm run tsc
+      - run: npm ci
+      - run: npm run tsc
 
   test:
-    name: test-check
+    name: Tests
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - uses: actions/setup-node@v4
         with:
-          node-version: '20.9'
+          node-version: '24'
           cache: 'npm'
-      - name: Install dependencies
-        run: npm ci
-      - name: Run Tests
-        run: npm run test
+      - run: npm ci
+      - run: npm run test
 
   build:
-    name: build-check
+    name: Build
     runs-on: ubuntu-latest
+    needs: [lint, type-check]
     steps:
       - uses: actions/checkout@v4
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - uses: actions/setup-node@v4
         with:
-          node-version: '20.9'
+          node-version: '24'
           cache: 'npm'
-      - name: Install dependencies
-        run: npm ci
-      - name: Build
-        run: npm run build
+      - run: npm ci
+      - run: npm run build
+
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    needs: [test, build]  # Только после успешных тестов+сборки
+    if: github.ref == 'refs/heads/main'  # Только на main
+    steps:
+      - uses: actions/checkout@v4
+      - run: echo "Deploy to Vercel/Render"
+      # Добавьте реальный deploy позже
