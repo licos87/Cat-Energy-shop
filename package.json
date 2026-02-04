@@ -20,6 +20,7 @@
 		"db::studio": "dotenv -e backend/.env.local -- prisma studio",
 		"db:pull": "dotenv -e backend/.env.local -- prisma db pull",
 		"db:migrate": "dotenv -e backend/.env.local -- prisma migrate dev --name"
+		"prisma:generate:ci": "DATABASE_URL=\"file:./prisma/dev.db\" prisma generate"
 	},
 	"dependencies": {
 		"@prisma/client": "7.3.0",
