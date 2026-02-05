@@ -1,39 +1,82 @@
-Полноценный интернет-магазин кормов для кошек с fullstack стеком Next.js 16 + Express + Prisma + TypeScript.
-🛠 Технологии
+# 🐈 Cat Energy — Интернет-магазин функционального питания для кошек
 
-Frontend (Next.js 16)
-├── Next.js 16.1.0 (App Router)
-├── React 19.2.3
-├── TypeScript 5.9.3
-├── ESLint + Prettier (кодстайл)
-└── Jest + RTL (тесты)
+Cat Energy — это современное многостраничное веб-приложение, разработанное для владельцев кошек, которые заботятся о здоровье своих питомцев. Проект реализован на стеке Next.js 16 и Express с использованием архитектурных подходов FSD (Feature-Sliced Design).
 
-Backend (Express + Prisma + SQLite)
-├── Express 5.2.1 (REST API)
-├── Prisma 6.19.2 + SQLite (ORM + БД)
-├── bcrypt 6.0.0 (хеширование паролей)
-├── JWT (аутентификация)
-├── Helmet (заголовки безопасности)
-└──  CORS + Compression + RateLimit (middleware)
+## 🚀 Особенности
+- **Многостраничность:** Главная страница, Каталог товаров, Форма подбора программы питания.
+- **Адаптивность:** Полная поддержка мобильных, планшетных и десктопных версий.
+- **Fullstack:** Собственный API сервер на Express с базой данных Prisma/PostgreSQL.
+- **Производительность:** Использование App Router в Next.js 16 для быстрой загрузки.
 
-## Getting Started
+## 🛠 Технологии
 
-First, run the development server:
+### Frontend
+- **Next.js 16 (App Router)** — основной фреймворк.
+- **React 19** — библиотека интерфейса.
+- **TypeScript 5.9** — строгая типизация.
+- **CSS Modules** — изолированные стили компонентов.
+- **Jest + RTL** — модульное тестирование.
+- **FSD (Feature-Sliced Design)** — методология организации кода.
+
+### Backend
+- **Express 5** — серверный REST API.
+- **Prisma 7 + PostgreSQL (Supabase)** — ORM и база данных.
+- **Zod** — валидация данных.
+- **Helmet, CORS, Rate Limit** — безопасность и оптимизация.
+- **Bcrypt + JWT** — аутентификация.
+
+## 📂 Структура проекта
+- `/src/app` — настройки Next.js, роутинг и глобальные стили.
+- `/src/pages_` — логические компоненты страниц (согласно FSD).
+- `/backend` — исходный код API сервера.
+- `/public` — статические ресурсы (изображения, шрифты).
+- `/prisma` — схема базы данных и миграции.
+
+## ⚙️ Установка и запуск
+
+### Предварительные требования
+- Node.js версии **24.13.0** или выше.
+- npm версии **11.6.2** или выше.
+
+### Шаги установки
+
+1. **Клонируйте репозиторий:**
+   ```bash
+   git clone https://github.com/your-username/cat-energy.git
+   cd cat-energy
+   ```
+
+2. **Установите зависимости:**
+   ```bash
+   npm install
+   ```
+
+3. **Настройте базу данных:**
+   ```bash
+   # Создайте файл .env в папке backend на основе примера и укажите DATABASE_URL
+   # Генерация Prisma клиента
+   npm run db:generate
+   ```
+
+### Запуск проекта
+
+Для разработки используется команда, запускающая одновременно клиент и сервер:
 
 ```bash
-npm run dev # (server:3000 + client:3001)
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm run dev
 ```
+- **Frontend (Client):** [http://localhost:3000](http://localhost:3000)
+- **Backend (Server):** [http://localhost:3001](http://localhost:3001)
 
-Open [http://localhost:3001](http://localhost:3000) with your browser to see the result.
+### Другие команды
+- `npm run build` — сборка проекта для продакшена.
+- `npm run lint` — проверка кода линтером.
+- `npm run test` — запуск тестов.
+- `npm run db::studio` — просмотр базы данных через Prisma Studio.
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📖 Лучшие практики
+В проекте соблюдаются современные стандарты разработки:
+- Компонентный подход и переиспользование кода.
+- Семантическая верстка.
+- Оптимизация изображений средствами Next.js.
+- Чистота кода (ESLint + Prettier).
