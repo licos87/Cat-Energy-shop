@@ -1,1 +1,3 @@
-export { CatalogPage } from './CatalogPage';
+import  CatalogPage  from './ui/CatalogPage';
+
+export default CatalogPage;
