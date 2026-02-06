@@ -5,8 +5,8 @@ import { Image } from 'next/dist/client/image-component';
 import { RoutePath } from '@shared/constants/routePath';
 import { Button, Text } from '@shared/ui';
 
-import PromoImgMobile from '../assets/promo-img-mobile.png';
-import PromoImg from '../assets/promo-img.png';
+import PromoImgMobile from '@pages_/home/assets/promo-img-mobile.png';
+import PromoImg from '@pages_/home/assets/promo-img.png';
 import styles from './Hero.module.css';
 
 function Hero() {

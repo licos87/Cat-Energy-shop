@@ -55,7 +55,7 @@ projectStructure.cache.json
 
 # env files
 .env*
-/backend/.env.local
+/backend/.env
 
 # vercel
 .vercel

@@ -1,1 +1,3 @@
-export { FormPage } from './FormPage';
+import FormPage from './ui';
+
+export default FormPage;

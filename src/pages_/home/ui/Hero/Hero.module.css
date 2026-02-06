@@ -48,7 +48,7 @@
     content: '';
     position: absolute;
     inset: 0;
-    background-image: url("../assets/cat.png");
+    background-image: url("../../assets/cat.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -59,8 +59,9 @@
     }
 
     @media (width >= 1440px) {
-      background-image: url("../assets/cat-desktop.png");
+      background-image: url("../../assets/cat-desktop.png");
       width: calc(100vw / 2);
+      max-width: calc(1440px / 2);
       height: 694px;
       top: -220px;
       left: 50%;
@@ -82,6 +83,7 @@
     @media (width >= 1440px) {
       content: '';
       width: 100vw;
+      max-width: 1440px;
       height: 694px;
       top: -220px;
       left: -190px;

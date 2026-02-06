@@ -16,10 +16,10 @@
 		"lint:fix": "npx eslint --fix src/",
 		"tsc": "npx tsc",
 		"test": "jest",
-		"db:generate": "dotenv -e backend/.env.local -- prisma generate",
-		"db::studio": "dotenv -e backend/.env.local -- prisma studio",
-		"db:pull": "dotenv -e backend/.env.local -- prisma db pull",
-		"db:migrate": "dotenv -e backend/.env.local -- prisma migrate dev --name"
+		"db:generate": "dotenv -e backend/.env -- prisma generate",
+		"db::studio": "dotenv -e backend/.env -- prisma studio",
+		"db:pull": "dotenv -e backend/.env -- prisma db pull",
+		"db:migrate": "dotenv -e backend/.env -- prisma migrate dev --name"
 	},
 	"dependencies": {
 		"@prisma/client": "7.3.0",

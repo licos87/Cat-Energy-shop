@@ -4,7 +4,8 @@
   --color-bg: #ffffff;
   --color-bg-card: #f2f2f2;
   --color-font: #000000;
-  --color-separator: #E6E6E6;
+  --color-font-second: #444444;
+  --color-separator: #cdcdcd;
   --color-disabled: rgba(0, 0, 0, 0.1);
   --color-accent: #68B738;
   --color-alert: #ff8282;
@@ -43,7 +44,7 @@
   :root {
     --color-bg: #0a0a0a;
     --color-font: #ededed;
-    --color-bg-card: rgba(242, 242, 242, 0.5);
+    --color-bg-card: #8e8e8e;
   }
 }
 
