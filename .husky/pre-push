@@ -1,0 +1,12 @@
+
+branch="$(git rev-parse --abbrev-ref HEAD)"
+
+if ! echo "$branch" | grep -qE '^(feature|bugfix|init)/.+$|^develop$'; then
+    echo "Ошибка: Название ветки '$branch' не соответствует формату:"
+    echo "- feature/nameFeature (любое имя после /)"
+    echo "- bugfix/nameFeature (любое имя после /)"
+    echo "- develop для основной ветки разработки"
+    exit 1
+fi
+
+exit 0
