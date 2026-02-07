@@ -13,6 +13,7 @@ import './styles/globals.css';
 
 
 
+import Footer from '@widgets/footer';
 import Header from '@widgets/header';
 
 
@@ -51,6 +52,7 @@ export default function RootLayout({
 			<body className={`${latoSans.variable} ${oswaldSans.variable}`}>
 				<Header />
 				{children}
+				<Footer />
 			</body>
 		</html>
 	);
