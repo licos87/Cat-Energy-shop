@@ -1,0 +1,94 @@
+.footer {
+  position: relative;
+  width: 100%;
+}
+
+.mapContainer {
+  width: 100%;
+  height: 362px;
+  background-color: #f2f2f2;
+
+  @media (width >= 768px) {
+    height: 400px;
+  }
+}
+
+.map {
+  width: 100%;
+  height: 100%;
+}
+
+.content {
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 1220px;
+  padding: 0 20px;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.footerTop {
+  position: relative;
+}
+
+.contacts {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  background-color: var(--color-bg);
+  padding: 26px 20px;
+  text-align: center;
+  align-items: center;
+
+  @media (width >= 768px) {
+    padding: 60px 70px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  @media (width >= 1440px) {
+    position: absolute;
+    top: 50%;
+    left: calc(50% - 400px);
+    max-width: 565px;
+    padding: 60px 78px;
+    display: flex;
+    gap: 86px;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+  }
+}
+
+.contactsTitle.contactsTitle {
+  font-family: var(--ff-title);
+  font-size: var(--fz-xs);
+  line-height: 1.3em;
+  text-transform: uppercase;
+  text-align: start;
+
+  @media (width >= 768px) {
+    width: 164px;
+  }
+}
+
+.address.address {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  text-align: start;
+  align-self: start;
+  font-family: var(--ff-default);
+  font-size: var(--fz-xxs);
+  font-style: normal;
+  line-height: 1.45em;
+  color: var(--color-font-second);
+
+  @media (width >= 768px) {
+    gap: 20px;
+    text-align: end;
+    width: 160px;
+  }
+}
+

@@ -1,23 +1,11 @@
 import type { Metadata } from 'next';
 
-
-
 import { Lato, Oswald } from 'next/font/google';
-
-
-
-
-
 
 import './styles/globals.css';
 
-
-
+import Footer from '@widgets/footer';
 import Header from '@widgets/header';
-
-
-
-
 
 const latoSans = Lato({
 	weight: ['400'],
@@ -51,6 +39,7 @@ export default function RootLayout({
 			<body className={`${latoSans.variable} ${oswaldSans.variable}`}>
 				<Header />
 				{children}
+				<Footer />
 			</body>
 		</html>
 	);
