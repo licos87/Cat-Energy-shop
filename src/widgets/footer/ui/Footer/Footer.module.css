@@ -51,13 +51,12 @@
   @media (width >= 1440px) {
     position: absolute;
     top: 50%;
-    left: 25%;
+    left: calc(50% - 400px);
     max-width: 565px;
     padding: 60px 78px;
     display: flex;
     gap: 86px;
     transform: translate(-50%, -50%);
-    pointer-events: none;
     z-index: 10;
   }
 }

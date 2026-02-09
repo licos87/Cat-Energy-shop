@@ -23,7 +23,6 @@
         "name": "next"
       }
     ],
-//		"types": ["@yandex/ymaps3-types"],
     "paths": {
 			"@/*": ["./src/*"],
 			"@shared/*": ["./src/shared/*"],
@@ -32,7 +31,6 @@
 			"@widgets/*": ["./src/widgets/*"],
 			"@pages_/*": ["./src/pages_/*"],
 			"@app/*": ["./src/app/*"],
-//			"ymaps3": ["./node_modules/@yandex/ymaps3-types"]
 		}
   },
   "include": [
