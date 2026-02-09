@@ -4,6 +4,11 @@ import React, { useEffect, useRef, useState } from 'react';
 
 
 
+import classnames from 'classnames';
+
+
+
+import styles from './YandexMap.module.css';
 
 
 interface YandexMapProps {
@@ -13,25 +18,27 @@ interface YandexMapProps {
 }
 
 const YandexMap: React.FC<YandexMapProps> = ({
-	center = [30.322980173610603, 59.938585304767734], // Санкт-Петербург по умолчанию
-	zoom = 16,
+	center = [37.61908, 55.75177],
+	zoom = 14,
 	className,
 }) => {
 	const mapContainerRef = useRef<HTMLDivElement>(null);
 	const [isLoaded, setIsLoaded] = useState(false);
 
 	useEffect(() => {
+		let script: HTMLScriptElement | null = null;
+
 		const loadYMaps = async () => {
 			if (typeof window === 'undefined') return;
 
-			if (window.ymaps) {
+			if (window.map) {
 				setIsLoaded(true);
 				return;
 			}
 
-			const script = document.createElement('script');
+			script = document.createElement('script');
 			script.src = `https://api-maps.yandex.ru/2.1/?apikey=${process.env.NEXT_PUBLIC_YMAPS_API_KEY}&lang=ru_RU`;
-			script.async = true;
+			script.defer = true;
 			script.onload = () => {
 				window.ymaps.ready(() => setIsLoaded(true));
 			};
@@ -39,6 +46,12 @@ const YandexMap: React.FC<YandexMapProps> = ({
 		};
 
 		loadYMaps();
+
+		return () => {
+			if (script && document.head.contains(script)) {
+				document.head.removeChild(script);
+			}
+		};
 	}, []);
 
 	useEffect(() => {
@@ -48,12 +61,11 @@ const YandexMap: React.FC<YandexMapProps> = ({
 
 		const initMap = () => {
 			const map = new ymaps.Map(mapContainerRef.current as HTMLElement, {
-				center, // v2.1 использует [lat, lon]
+				center,
 				zoom,
-				controls: [], // Убираем лишние элементы управления
+				controls: [],
 			});
 
-			// Добавляем кастомный маркер
 			const placemark = new ymaps.Placemark(
 				center,
 				{},
@@ -61,7 +73,7 @@ const YandexMap: React.FC<YandexMapProps> = ({
 					iconLayout: 'default#image',
 					iconImageHref: '/assets/image/map-pin.png',
 					iconImageSize: [57, 53],
-					iconImageOffset: [-35, -45], // Центрируем по горизонтали и в самый низ по вертикали
+					iconImageOffset: [-35, -45],
 				},
 			);
 
@@ -82,26 +94,9 @@ const YandexMap: React.FC<YandexMapProps> = ({
 	return (
 		<div
 			ref={mapContainerRef}
-			className={className}
-			style={{
-				width: '100%',
-				height: '100%',
-				minHeight: '400px',
-				...(!isLoaded && { backgroundColor: '#f0f0f0' }),
-			}}
+			className={classnames(styles.map, className)}
 		>
-			{!isLoaded && (
-				<div
-					style={{
-						display: 'flex',
-						justifyContent: 'center',
-						alignItems: 'center',
-						height: '100%',
-					}}
-				>
-					Загрузка карты...
-				</div>
-			)}
+			{!isLoaded && <div className={styles.fallback}>Загрузка карты...</div>}
 		</div>
 	);
 };

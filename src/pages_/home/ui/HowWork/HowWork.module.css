@@ -3,6 +3,8 @@
   display: flex;
   flex-direction: column;
   gap: 40px;
+  max-width: 1440px;
+  margin-inline: auto;
 
   @media (width >= 768px) {
     padding: 46px 30px;
@@ -86,19 +88,19 @@
 }
 
 .leaf:after {
-  background-image: url("/assets/icon/leaf.svg");
+  background-image: url("/assets/svg/leaf.svg");
 }
 
 .cooking:after {
-  background-image: url("/assets/icon/cooking.svg");
+  background-image: url("/assets/svg/cooking.svg");
 }
 
 .diet:after {
-  background-image: url("/assets/icon/diet.svg");
+  background-image: url("/assets/svg/diet.svg");
 }
 
 .time:after {
-  background-image: url("/assets/icon/time.svg");
+  background-image: url("/assets/svg/time.svg");
 }
 
 .text {

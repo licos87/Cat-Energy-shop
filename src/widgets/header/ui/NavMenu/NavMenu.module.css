@@ -8,11 +8,12 @@
   position: absolute;
   top: 65px;
   left: 0;
-  width: 100vw;
+  width: 0;
   list-style-type: none;
   z-index: 50;
   pointer-events: none;
   background-color: var(--color-bg);
+  transition: width 0s 0.4s;
 
   @media (width >= 768px) {
     position: static;
@@ -146,6 +147,8 @@
 .navContainer_open {
   & .navList {
     pointer-events: all;
+    width: 100%;
+    transition: width 0s ease-out;
   }
 
   & .navItem {

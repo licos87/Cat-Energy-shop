@@ -6,7 +6,7 @@ import { RoutePath } from '@shared/constants/routePath';
 import { Link } from '@shared/ui';
 import { NavMenu } from '@widgets/header/ui';
 
-import LogoText from '../../assets/logo-text.svg';
+import LogoText from '../../../../../public/assets/svg/logo-text.svg';
 import styles from './Header.module.css';
 
 function Header() {

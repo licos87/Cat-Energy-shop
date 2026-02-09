@@ -2,20 +2,29 @@
   background-color: var(--color-bg-card);
 
   @media (width >= 768px) {
+    padding-block-end: 100px;
     background-image: linear-gradient(
-      var(--color-bg) 90%,
-      var(--color-bg-card) 90%,
+      var(--color-bg) 80%,
+      var(--color-bg-card) 80%,
       var(--color-bg-card) 100%
     );
   }
 
   @media (width >= 1440px) {
     padding-block: 24px 100px;
+  }
+}
+
+.wrapper {
+  max-width: 1440px;
+  margin-inline: auto;
+
+  @media (width >= 1440px) {
     display: grid;
     grid-template-columns: repeat(2,1fr);
     background-image: linear-gradient(
-      var(--color-bg) 28%,
-      var(--color-bg-card) 28.1%,
+      var(--color-bg) 25%,
+      var(--color-bg-card) 25.1%,
       var(--color-bg-card) 100%
     );
   }
@@ -30,7 +39,7 @@
 
   @media (width >= 1440px) {
     max-width: 530px;
-    padding: 0 0 0 110px;
+    padding: 0 110px;
   }
 }
 
