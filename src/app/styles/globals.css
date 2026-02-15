@@ -42,13 +42,16 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-bg: #0a0a0a;
+    --color-bg: #121D2B;
     --color-font: #ededed;
     --color-bg-card: #8e8e8e;
+    --color-font-second: #e5e5e5;
   }
 }
 
 body {
+  display: flex;
+  flex-direction: column;
   color: var(--color-font);
   background: var(--color-bg);
   font-family: var(--font-lato), Arial, sans-serif;

@@ -1,9 +1,9 @@
 import express from 'express';
 
-import { getALlPrograms } from '../controllers/programs';
+import { getAllPrograms } from '../controllers/programs';
 
 const router = express.Router();
 
-router.get('/', getALlPrograms);
+router.get('/', getAllPrograms);
 
 export default router;

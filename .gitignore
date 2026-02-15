@@ -43,6 +43,7 @@ yarn-error.log*
 stats.html
 .vite-inspect
 /.cursor
+CLAUDE.md
 
 # Playwright
 /test-results/
@@ -54,8 +55,8 @@ projectStructure.cache.json
 
 
 # env files
-.env*
-/backend/.env
+.env.local
+/backend/.env.local
 
 # vercel
 .vercel

@@ -1,0 +1,16 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "isolatedModules": true
+  },
+  "include": [
+    "next-env.d.ts",
+    "jest.setup.ts",
+    "src/**/*.test.ts",
+    "src/**/*.test.tsx",
+    "src/**/*.tsx",
+    "src/**/*.ts",
+    "types/**/*"
+  ],
+  "exclude": ["node_modules"]
+}

@@ -24,6 +24,7 @@
     width: 100%;
     z-index: unset;
     background-color: transparent;
+    transition: width 0s;
   }
 }
 
@@ -42,6 +43,7 @@
     opacity: 1;
     line-height: unset;
     font-size: var(--fz-s);
+    transition: line-height 0s;
   }
 
   &:first-child {

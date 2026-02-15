@@ -2,7 +2,7 @@ import React from 'react';
 
 
 
-import { ImageSlider } from '@pages_/home/ui/ImageSlider/ImageSlider';
+import { ImageSlider } from '@/pages_/home/ui/ImageSlider/ImageSlider';
 
 
 

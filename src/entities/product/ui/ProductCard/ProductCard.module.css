@@ -1,0 +1,54 @@
+.card {
+  padding: 20px 20px 24px;
+  border-block-end: 1px solid var(--color-separator);
+}
+
+.content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: 16px;
+  column-gap: clamp(0px, calc(100% - 330px), 100px);
+  align-items: center;
+}
+
+.imgContainer {
+  position: relative;
+  width: 140px;
+  height: 107px;
+  justify-self: end;
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.productName {
+  text-transform: uppercase;
+  max-width: 70%;
+}
+
+.productInfo {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  font-size: var(--fz-xxs);
+  font-family: var(--ff-default);
+  color: var(--color-font-second);
+  line-height: 1.3em;
+  width: clamp(140px, 100%, 200px);
+}
+
+.productInfoValue {
+  justify-self: end;
+}
+
+.orderBtn {
+  padding: 10px 109px;
+  grid-column: 1/3;
+  color: var(--color-bg);
+  background-color: var(--color-accent);
+  border-radius: 0;
+  width: fit-content;
+  justify-self: center;
+}

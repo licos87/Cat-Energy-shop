@@ -27,7 +27,7 @@
 			"@/*": ["./src/*"],
 			"@shared/*": ["./src/shared/*"],
 			"@entities/*": ["./src/entities/*"],
-			"@feature/*": ["./src/feature/*"],
+			"@features/*": ["./src/features/*"],
 			"@widgets/*": ["./src/widgets/*"],
 			"@pages_/*": ["./src/pages_/*"],
 			"@app/*": ["./src/app/*"],
@@ -42,5 +42,5 @@
 		"**/*.mts",
 		"types/**/*",
 	],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules", "**/*.test.ts", "**/*.test.tsx", "jest.setup.ts"]
 }

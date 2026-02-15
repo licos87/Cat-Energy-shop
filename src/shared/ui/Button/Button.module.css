@@ -1,14 +1,19 @@
 .btn {
-	border-radius: 10px;
+	padding: 10px;
+	font-family: var(--ff-title);
+	background-color: var(--color-accent);
+	text-transform: uppercase;
+	font-size: var(--fz-xs);
+	color: #ffffff;
+	text-align: center;
 	font-weight: 400;
 	font-size: var(--fz-xs);
 	line-height: var(--fz-s);
 	box-sizing: border-box;
-	padding: 0;
 	border: none;
+	border-radius: 0;
 	cursor: pointer;
 	transition: opacity var(--trans-default);
-	font-family: var(--ff-title);
 
 	&:hover {
 		opacity: var(--hover);

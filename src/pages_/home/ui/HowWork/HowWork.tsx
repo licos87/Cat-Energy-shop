@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { HOW_WORK_DATA } from '@pages_/home/constants';
+import { HOW_WORK_DATA } from '@/pages_/home/constants';
 import classnames from 'classnames';
 
 import { Text } from '@shared/ui';

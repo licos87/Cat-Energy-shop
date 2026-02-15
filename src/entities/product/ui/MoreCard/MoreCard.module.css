@@ -1,0 +1,42 @@
+.moreCard {
+  position: relative;
+  padding: 78px 20px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  border-block-end: 1px solid var(--color-separator);
+
+  &:before {
+    position: absolute;
+    content: '';
+    width: 30px;
+    height: 2px;
+    top: 38px;
+    background-color: var(--color-separator);
+  }
+
+  &:after {
+    position: absolute;
+    content: '';
+    width: 2px;
+    height: 30px;
+    top: 25px;
+    background-color: var(--color-separator);
+  }
+}
+
+.moreCardContent {
+  text-align: center;
+}
+
+.morePlus {
+  display: block;
+  font-size: 32px;
+  line-height: 0.8em;
+}
+
+.morePlusBtn {
+  padding: 10px 94px;
+  border-radius: 0;
+}

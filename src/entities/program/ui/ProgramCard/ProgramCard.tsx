@@ -5,10 +5,11 @@ import { Image } from 'next/dist/client/image-component';
 import { ApiRoute, RoutePath } from '@shared/constants';
 import { fetchData } from '@shared/lib';
 import { Category } from '@shared/types';
-import { Button, Text } from '@shared/ui';
+import { Text } from '@shared/ui';
 
 import { Program } from '../../model/types/program';
 import styles from './ProgramCard.module.css';
+import Link from 'next/link';
 
 interface ProgramCardProps {
 	program: Program;
@@ -48,7 +49,7 @@ async function ProgramCard({ program }: ProgramCardProps) {
 				</Text>
 			)}
 			{category && (
-				<Button
+				<Link
 					href={{
 						pathname: RoutePath.CATALOG,
 						query: { category_id: category.id },
@@ -82,7 +83,7 @@ async function ProgramCard({ program }: ProgramCardProps) {
 							stroke="black"
 						/>
 					</svg>
-				</Button>
+				</Link>
 			)}
 		</div>
 	);

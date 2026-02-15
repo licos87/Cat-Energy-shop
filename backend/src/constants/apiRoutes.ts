@@ -3,4 +3,6 @@ export const enum AppRoute {
 	PROGRAMS = '/programs',
 	CATEGORIES = '/categories',
 	FORM = '/form',
+	PRODUCTS = '/products',
+	EXTRA_PRODUCTS = '/extra-products',
 }

@@ -1,6 +1,6 @@
-export type Result<T, E = string> =
+export type Result<T> =
 	| { success: true; data: T }
-	| { success: false; message: E };
+	| { success: false; message: string };
 
 export interface Program {
 	id: number,

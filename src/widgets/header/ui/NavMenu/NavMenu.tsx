@@ -38,6 +38,7 @@ function NavMenu() {
 					<Link
 						href={RoutePath.MAIN}
 						className={styles.navLink}
+						onClick={openToggle}
 					>
 						Главная
 					</Link>
@@ -50,6 +51,7 @@ function NavMenu() {
 					<Link
 						href={RoutePath.CATALOG}
 						className={styles.navLink}
+						onClick={openToggle}
 					>
 						Каталог продукции
 					</Link>
@@ -62,6 +64,7 @@ function NavMenu() {
 					<Link
 						href={RoutePath.FORM}
 						className={styles.navLink}
+						onClick={openToggle}
 					>
 						Подбор программы
 					</Link>

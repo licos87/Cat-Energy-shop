@@ -1,4 +1,9 @@
+'use client';
+
 import React from 'react';
+
+import classnames from 'classnames';
+import { usePathname } from 'next/navigation';
 
 import { Text } from '@shared/ui';
 import FooterBottom from '@widgets/footer/ui/FooterBottom/FooterBottom';
@@ -8,10 +13,16 @@ import { socialList } from '../../constants';
 import styles from './Footer.module.css';
 
 const Footer = () => {
+	const pathname = usePathname();
+
 	return (
 		<footer className={styles.footer}>
 			<div className={styles.footerTop}>
-				<div className={styles.contacts}>
+				<div
+					className={classnames(styles.contacts, {
+						[styles.catalogContacts]: pathname === '/catalog',
+					})}
+				>
 					<Text
 						className={styles.contactsTitle}
 						tag="h4"

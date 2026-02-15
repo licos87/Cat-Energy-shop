@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 	description: 'Анкета для подбора программы',
 };
 
-const FormPage = dynamic(() => import('../../pages_/form'), {
+const FormPage = dynamic(() => import('@pages_/form'), {
 	loading: () => <div>Загрузка...</div>,
 });
 

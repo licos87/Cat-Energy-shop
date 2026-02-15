@@ -92,3 +92,10 @@
   }
 }
 
+.catalogContacts {
+  background-color: var(--color-bg-card);
+
+  @media (width >= 1440px) {
+    background-color: var(--color-bg);
+  }
+}

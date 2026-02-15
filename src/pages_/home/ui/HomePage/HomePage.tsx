@@ -1,9 +1,9 @@
-import Hero from '@pages_/home/ui/Hero';
-import ProgramList from '@pages_/home/ui/ProgramList';
+import Hero from '@/pages_/home/ui/Hero';
+import HowWork from '@/pages_/home/ui/HowWork';
+import LiveModel from '@/pages_/home/ui/LiveModel';
+import ProgramList from '@/pages_/home/ui/ProgramList';
 
 import styles from './HomePage.module.css';
-import HowWork from '@pages_/home/ui/HowWork';
-import LiveModel from '@pages_/home/ui/LiveModel';
 
 const HomePage = () => {
 	return (
@@ -12,7 +12,7 @@ const HomePage = () => {
 				<Hero />
 				<ProgramList />
 				<HowWork />
-				<LiveModel/>
+				<LiveModel />
 			</main>
 		</div>
 	);

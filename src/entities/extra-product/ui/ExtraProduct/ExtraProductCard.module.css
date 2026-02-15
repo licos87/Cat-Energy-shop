@@ -1,0 +1,18 @@
+.extraProductCard {
+  padding: 14px 0 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.extraProductTitle {
+  text-transform: uppercase;
+}
+
+.extraProductInfo {
+  display: flex;
+  font-family: var(--ff-default);
+  font-size: var(--fz-xxs);
+  color: var(--color-font-second);
+  justify-content: space-between;
+}

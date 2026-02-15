@@ -3,11 +3,11 @@
 import React from 'react';
 
 import { ApiRoute } from '@shared/constants';
-import { Button } from '@shared/ui';
 import { SocialItem } from '@widgets/footer/model/types';
 
 import LogoText from '../../../../../public/assets/svg/logo-text.svg';
 import styles from './FooterBottom.module.css';
+import Link from 'next/link';
 
 interface FooterBottomProps {
 	socialList: SocialItem[];
@@ -16,7 +16,7 @@ interface FooterBottomProps {
 function FooterBottom({ socialList }: FooterBottomProps) {
 	return (
 		<div className={styles.footerBottom}>
-			<Button
+			<Link
 				href={ApiRoute.MAIN}
 				className={styles.logoTitle}
 			>
@@ -25,7 +25,7 @@ function FooterBottom({ socialList }: FooterBottomProps) {
 					height={18}
 					className={styles.logoTitle}
 				/>
-			</Button>
+			</Link>
 			<ul className={styles.socialList}>
 				{socialList.map((socialItem) => (
 					<li
