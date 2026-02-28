@@ -4,8 +4,8 @@
   @media (width >= 768px) {
     padding-block-end: 100px;
     background-image: linear-gradient(
-      var(--color-bg) 80%,
-      var(--color-bg-card) 80%,
+      var(--color-bg) 24%,
+      var(--color-bg-card) 24%,
       var(--color-bg-card) 100%
     );
   }

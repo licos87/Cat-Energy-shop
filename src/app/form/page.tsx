@@ -2,19 +2,14 @@ import type { Metadata } from 'next';
 
 import React from 'react';
 
-import dynamic from 'next/dynamic';
-
 export const metadata: Metadata = {
 	title: 'Подбор программы',
 	description: 'Анкета для подбора программы',
 };
 
-const FormPage = dynamic(() => import('@pages_/form'), {
-	loading: () => <div>Загрузка...</div>,
-});
-
+// TODO: вернуть dynamic import для FormPage
 function Form() {
-	return <FormPage />;
+	return <div>Загрузка...</div>;
 }
 
 export default Form;

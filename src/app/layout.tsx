@@ -36,9 +36,12 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="ru">
-			<body className={`${latoSans.variable} ${oswaldSans.variable}`} style={{minHeight: '100vh', justifyContent: 'space-between'}}>
+			<body
+				className={`${latoSans.variable} ${oswaldSans.variable}`}
+				style={{ minHeight: '100vh' }}
+			>
 				<Header />
-				{children}
+				<main style={{ flexGrow: 1 }}>{children}</main>
 				<Footer />
 			</body>
 		</html>

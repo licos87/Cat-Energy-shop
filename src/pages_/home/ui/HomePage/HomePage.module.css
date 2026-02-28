@@ -1,9 +1,6 @@
 .page {
   font-family: var(--font-lato), Arial, sans-serif;
   background-color: var(--color-bg);
-}
-
-.main {
   width: 100%;
   margin-inline: auto;
   background-color: var(--color-bg);

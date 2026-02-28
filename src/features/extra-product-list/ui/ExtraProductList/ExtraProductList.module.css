@@ -2,13 +2,19 @@
   padding: 24px 0;
 }
 
-.title {
+.title.title {
   position: relative;
   text-align: start;
   margin-block-end: 36px;
   display: inline-block;
   padding-inline: 20px;
   background-color: var(--color-bg);
+
+  @media (width >= 768px) {
+    font-size: var(--fz-xxl);
+    margin-inline-start: 30px;
+    padding-inline: 40px;
+  }
 
   &:after {
     position: absolute;
@@ -19,21 +25,48 @@
     left: 0;
     z-index: -10;
     background-color: var(--color-accent);
+
+    @media (width >= 768px) {
+      left: -30px;
+    }
   }
 }
 
 .extraProductList {
   padding: 14px 20px 20px;
   list-style-type: none;
+
+  @media (width >= 768px) {
+    padding: 44px 30px 70px;
+  }
 }
 
 .extraProductItem {
   border-block: 1px solid var(--color-separator);
+
+  @media (width >= 768px) {
+    border: transparent;
+    border-block-end: 1px solid var(--color-separator);
+    border-inline: 1px solid var(--color-separator);
+    padding: 26px 38px;
+
+    &:first-child {
+      border-block-start: 1px solid var(--color-separator);
+    }
+  }
 }
 
 .promoImgContainer {
   position: relative;
   padding: 0 20px;
+  height: 290px;
+  width: 100%;
+
+  @media (width >= 768px) {
+    height: 200px;
+    padding: 0 30px;
+    overflow: hidden;
+  }
 
   &:after {
     position: absolute;
@@ -41,11 +74,23 @@
     inset: 0 20px;
     background-color: var(--color-accent);
     opacity: 85%;
+
+    @media (width >= 768px) {
+      inset: 0 30px;
+    }
   }
 }
 
 .promoImg {
   display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  @media (width >= 768px) {
+    object-fit: cover;
+    object-position: 0 60%;
+  }
 }
 
 .promoTextContainer {
@@ -58,15 +103,31 @@
   transform: translate(-50%,-50%);
   gap: 48px;
   z-index: 10;
-  max-width: 70%;
+
+  @media (width >= 768px) {
+    width: 70vw;
+    flex-direction: row;
+    justify-content: space-between;
+  }
 
   & svg {
     width: 78px;
     height: 80px;
+
+    @media (width >= 768px) {
+      width: 80px;
+      height: 82px;
+      object-fit: contain;
+    }
   }
 }
 
 .promoText {
   color: var(--color-bg);
   text-align: center;
+
+  @media (width >= 768px) {
+    max-width: 161px;
+    text-align: start;
+  }
 }

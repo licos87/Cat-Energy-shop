@@ -1,0 +1,11 @@
+.catalogPage {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: clamp(var(--mobile-width), 100%, var(--desktop-width));
+  margin-inline: auto;
+}
+
+.title {
+  text-align: center;
+}

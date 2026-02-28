@@ -3,6 +3,12 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
+
+  @media (width >= 768px) {
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 .extraProductTitle {
@@ -15,4 +21,10 @@
   font-size: var(--fz-xxs);
   color: var(--color-font-second);
   justify-content: space-between;
+  justify-self: end;
+  gap: 50px;
+}
+
+.btn {
+  grid-column: 1/3;
 }

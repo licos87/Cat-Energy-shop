@@ -12,6 +12,7 @@ function MoreCard({ showMore }: MoreCardProps) {
 	return (
 		<div className={styles.moreCard}>
 			<div className={styles.moreCardContent}>
+				<div className={styles.moreImage}></div>
 				<Text
 					className={styles.moreTitle}
 					tag="h5"

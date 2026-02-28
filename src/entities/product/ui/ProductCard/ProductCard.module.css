@@ -1,6 +1,14 @@
 .card {
   padding: 20px 20px 24px;
   border-block-end: 1px solid var(--color-separator);
+
+  @media (width >= 768px) {
+    background-image: linear-gradient(180deg,
+    var(--color-bg) 20%,
+    var(--color-bg-card) 20%);
+    border-block-end: transparent;
+    padding: 20px 36px 40px;
+  }
 }
 
 .content {
@@ -9,6 +17,12 @@
   row-gap: 16px;
   column-gap: clamp(0px, calc(100% - 330px), 100px);
   align-items: center;
+
+  @media (width >= 768px) {
+    display: flex;
+    flex-direction: column;
+    row-gap: 22px;
+  }
 }
 
 .imgContainer {
@@ -16,27 +30,62 @@
   width: 140px;
   height: 107px;
   justify-self: end;
+
+  @media (width >= 768px) {
+    width: 200px;
+    height: 210px;
+  }
 }
 
 .description {
   display: flex;
   flex-direction: column;
   gap: 14px;
+
+  @media (width >= 768px) {
+    gap: 20px;
+    align-items: center;
+    width: 100%;
+  }
 }
 
-.productName {
+.productName.productName {
   text-transform: uppercase;
   max-width: 70%;
+  line-height: 1.2em;
+
+  @media (width >= 768px) {
+    text-align: center;
+    font-size: var(--fz-m);
+    width: 50%;
+  }
 }
 
 .productInfo {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  display: flex;
+  flex-direction: column;
   font-size: var(--fz-xxs);
   font-family: var(--ff-default);
   color: var(--color-font-second);
   line-height: 1.3em;
   width: clamp(140px, 100%, 200px);
+
+  @media (width >= 768px) {
+    font-size: var(--fz-xs);
+    gap: 6px;
+  }
+}
+
+.productRow {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: space-between;
+
+  @media (width >= 768px) {
+    width: 100%;
+    border-block-end: 1px solid var(--color-separator);
+    padding-block-end: 2px;
+  }
 }
 
 .productInfoValue {
@@ -44,11 +93,10 @@
 }
 
 .orderBtn {
-  padding: 10px 109px;
   grid-column: 1/3;
   color: var(--color-bg);
   background-color: var(--color-accent);
   border-radius: 0;
-  width: fit-content;
+  width: 100%;
   justify-self: center;
 }

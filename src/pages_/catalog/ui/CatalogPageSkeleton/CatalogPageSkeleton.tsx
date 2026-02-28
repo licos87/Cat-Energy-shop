@@ -5,7 +5,7 @@ import styles from './CatalogPageSkeleton.module.css';
 function CatalogPageSkeleton() {
   return (
     <div className={styles.skeleton}>
-      {/* ProductList */}
+
       <section className={styles.productSection}>
         <div className={styles.productTitle}>
           <Skeleton width={260} height={32} />
@@ -30,7 +30,6 @@ function CatalogPageSkeleton() {
         </div>
       </section>
 
-      {/* ExtraProductList */}
       <section className={styles.extraSection}>
         <div className={styles.extraTitle}>
           <Skeleton width={240} height={28} />

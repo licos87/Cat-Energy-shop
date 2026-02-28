@@ -3,9 +3,8 @@
 import { useState } from 'react';
 
 import ProductCard from '@entities/product';
-import MoreCard from '@entities/product/ui/MoreCard/MoreCard';
 import { Product } from '@entities/product/model';
-import { Text } from '@shared/ui';
+import MoreCard from '@entities/product/ui/MoreCard/MoreCard';
 
 import styles from './ProductList.module.css';
 
@@ -26,24 +25,16 @@ const ProductList = ({ products, error }: ProductListProps) => {
 		return <div>Ошибка загрузки</div>;
 	}
 	return (
-		<section>
-			<Text
-				className={styles.title}
-				tag="h2"
-			>
-				Каталог продукции
-			</Text>
-			<ul>
-				{showList.map((product) => (
-					<li key={product.id}>
-						<ProductCard product={product} />
-					</li>
-				))}
-				<li key="showMore">
-					<MoreCard showMore={showListToggle} />
+		<ul className={styles.catalogList}>
+			{showList.map((product) => (
+				<li key={product.id}>
+					<ProductCard product={product} />
 				</li>
-			</ul>
-		</section>
+			))}
+			<li className={styles.moreCardPlace} key="showMore">
+				<MoreCard showMore={showListToggle} />
+			</li>
+		</ul>
 	);
 };
 

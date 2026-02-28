@@ -1,10 +1,7 @@
 import { Button, Text } from '@shared/ui';
 
-
-
 import { ExtraProduct } from '../../model';
 import styles from './ExtraProductCard.module.css';
-
 
 interface ExtraProductCardProps {
 	product: ExtraProduct;
@@ -24,7 +21,7 @@ const ExtraProductCard = ({ product }: ExtraProductCardProps) => {
 				<dt>{product.description}</dt>
 				<dd>{product.price} ₽</dd>
 			</dl>
-			<Button>Заказать</Button>
+			<Button className={styles.btn}>Заказать</Button>
 		</div>
 	);
 };

@@ -34,14 +34,20 @@ const ProductCard = ({ product }: ProductCardProps) => {
 						{product.name}
 					</Text>
 					<dl className={styles.productInfo}>
-						<dt className={styles.productInfoTitle}>Масса</dt>
-						<dd className={styles.productInfoValue}>{product.weight}</dd>
+						<div className={styles.productRow}>
+							<dt className={styles.productInfoTitle}>Масса</dt>
+							<dd className={styles.productInfoValue}>{product.weight} г</dd>
+						</div>
 
-						<dt className={styles.productInfoTitle}>Вкус</dt>
-						<dd className={styles.productInfoValue}>{product.flavor}</dd>
+						<div className={styles.productRow}>
+							<dt className={styles.productInfoTitle}>Вкус</dt>
+							<dd className={styles.productInfoValue}>{product.flavor}</dd>
+						</div>
 
-						<dt className={styles.productInfoTitle}>Цена</dt>
-						<dd className={styles.productInfoValue}>{product.price} ₽</dd>
+						<div className={styles.productRow}>
+							<dt className={styles.productInfoTitle}>Цена</dt>
+							<dd className={styles.productInfoValue}>{product.price} ₽</dd>
+						</div>
 					</dl>
 				</div>
 				<Button
